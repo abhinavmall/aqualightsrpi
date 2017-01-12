@@ -17,16 +17,19 @@ var hour = date.getHours();
 if(hour > 10 && hour < 20){
   //Activate light 1
   light1.writeSync(0);
-  console.log('Aquarium Lights - ' + date + ' Light 1 turned on');
+  console.log('Aquarium Lights - ' + date + ' Light One turned on');
 } else {
   light1.writeSync(1);
+  console.log('Aquarium Lights - ' + date + ' Light One turned off');
 }
+
 if(hour > 12 && hour < 22){
   //Activate light 2
   light2.writeSync(0);
-  console.log('Aquarium Lights - ' + date + ' Light 2 turned on');
+  console.log('Aquarium Lights - ' + date + ' Light Two turned on');
 } else {
   light2.writeSync(1);
+  console.log('Aquarium Lights - ' + date + ' Light Two turned off');
 }
 
 console.log('Aquarium lights - Pins activated. Scheduling Jobs');
@@ -61,12 +64,11 @@ ruleLightTwo_Off.hour = 22;
 schedule.scheduleJob(ruleLightTwo_Off, function(){
   console.log('Aquarium Lights - ' + new Date() + ' Light Two turned off');
   light2.writeSync(1);
-}); 
+});
 
 console.log('Aquarium Lights - Jobs Scheduled');
 
-process.on('SIGINT', function () {
-  light1.unexport();
-  light2.unexport();
- });
-  
+process.on('SIGINT', function (){
+  //light1.unexport();
+  //light2.unexport();
+});
