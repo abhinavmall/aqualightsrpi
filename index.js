@@ -68,7 +68,7 @@ schedule.scheduleJob(ruleLightTwo_Off, function(){
 
 console.log('Aquarium Lights - Jobs Scheduled');
 
-process.on('SIGINT', function (){
+//process.on('SIGINT', function (){
   //light1.unexport();
   //light2.unexport();
-});
+//});
