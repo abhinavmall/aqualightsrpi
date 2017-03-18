@@ -35,6 +35,10 @@ if(hour > config.ruleLightOne_On.hour && hour < config.ruleLightOne_Off.hour){
   console.log('Aquarium Lights - ' + date + ' Light One turned off');
 }
 
+console.log(hour)
+console.log(config.ruleLightTwo_On.hour)
+console.log(config.ruleLightTwo_Off.hour)
+
 if(hour > config.ruleLightTwo_On.hour && hour < config.ruleLightTwo_Off.hour){
   //Activate light 2
   light2.writeSync(ON);
