@@ -28,17 +28,17 @@ var date = new Date();
 
 //Schedule of lights and pump
 var lightOneOn = new Date();
-lightOneOn.setHours(config.ruleLightOne_On.hour);
+lightOneOn.setHours(config.ruleLightOne_On.hour, config.ruleLightOne_On.minute, 0);
 var lightOneOff = new Date();
-lightOneOff.setHours(config.ruleLightOne_Off.hour);
+lightOneOff.setHours(config.ruleLightOne_Off.hour, config.ruleLightOne_Off.minute, 0);
 var lightTwoOn = new Date();
-lightTwoOn.setHours(config.ruleLightTwo_On.hour);
+lightTwoOn.setHours(config.ruleLightTwo_On.hour, config.ruleLightTwo_On.minute, 0);
 var lightTwoOff = new Date();
-lightTwoOff.setHours(config.ruleLightTwo_Off.hour)
+lightTwoOff.setHours(config.ruleLightTwo_Off.hour, config.ruleLightTwo_Off.minute, 0);
 var pumpOn = new Date();
-pumpOn.setHours(config.rulePump_On.hour);
+pumpOn.setHours(config.rulePump_On.hour, config.rulePump_On.minute, 0);
 var pumpOff = new Date();
-pumpOff.setHours(config.rulePump_Off.hour);
+pumpOff.setHours(config.rulePump_Off.hour, config.rulePump_Off.minute, 0);
 
 if(date >= lightOneOn && date <= lightOneOff){
   //Activate light 1
