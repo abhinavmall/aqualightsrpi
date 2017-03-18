@@ -23,10 +23,24 @@ var light2 = new GPIO(3, 'out');
 //Create pump corresponding to GPIO 4
 var pump = new GPIO(4, 'out');
 
+//Current date and time
 var date = new Date();
-var hour = date.getHours();
 
-if(hour >= config.ruleLightOne_On.hour && hour <= config.ruleLightOne_Off.hour){
+//Schedule of lights and pump
+var lightOneOn = new Date();
+lightOneOn.setHours(config.ruleLightOne_On.hour);
+var lightOneOff = new Date();
+lightOneOff.setHours(config.ruleLightOne_Off.hour);
+var lightTwoOn = new Date();
+lightTwoOn.setHours(config.ruleLightTwo_On.hour);
+var lightTwoOff = new Date();
+lightTwoOff.setHours(config.ruleLightTwo_Off.hour)
+var pumpOn = new Date();
+pumpOn.setHours(config.rulePump_On.hour);
+var pumpOff = new Date();
+pumpOff.setHours(config.rulePump_Off.hour);
+
+if(date >= lightOneOn && date <= lightOneOff){
   //Activate light 1
   light1.writeSync(ON);
   console.log('Aquarium Lights - ' + date + ' Light One turned on');
@@ -35,7 +49,7 @@ if(hour >= config.ruleLightOne_On.hour && hour <= config.ruleLightOne_Off.hour){
   console.log('Aquarium Lights - ' + date + ' Light One turned off');
 }
 
-if(hour >= config.ruleLightTwo_On.hour && hour <= config.ruleLightTwo_Off.hour){
+if(date >= lightTwoOn && date <= lightTwoOff){
   //Activate light 2
   light2.writeSync(ON);
   console.log('Aquarium Lights - ' + date + ' Light Two turned on');
@@ -44,7 +58,7 @@ if(hour >= config.ruleLightTwo_On.hour && hour <= config.ruleLightTwo_Off.hour){
   console.log('Aquarium Lights - ' + date + ' Light Two turned off');
 }
 
-if(hour >= config.rulePump_On.hour && hour <= config.rulePump_Off.hour){
+if(date >= pumpOn && date <= pumpOff){
   //Activate light 2
   pump.writeSync(ON);
   console.log('Aquarium Pump - ' + date + ' Filter pump turned on');
