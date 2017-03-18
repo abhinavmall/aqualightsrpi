@@ -24,3 +24,5 @@ config.rulePump_On.hour = 10;
 
 config.rulePump_Off.minute = 00;
 config.rulePump_Off.hour = 22;
+
+module.exports = config;
