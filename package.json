@@ -11,6 +11,6 @@
   "dependencies": {
     "forever": "^0.15.3",
     "node-schedule": "^1.2.0",
-    "onoff": "^1.1.1"
+    "onoff": "^1.1.2"
   }
 }

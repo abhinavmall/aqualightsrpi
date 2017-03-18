@@ -1,7 +1,7 @@
 var schedule = require('node-schedule');
 var GPIO = require('onoff').Gpio;
 var config = require('./config/config.js')
-console.log(config)
+//console.log(config)
 
 //Need four jobs to control on-off operations of two Lights.
 var ruleLightOne_On = new schedule.RecurrenceRule();
