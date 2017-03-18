@@ -1,11 +1,11 @@
 var config = {}
 
-var config.ruleLightOne_On = {}
-var config.ruleLightOne_Off = {}
-var config.ruleLightTwo_On = {}
-var config.ruleLightTwo_Off = {}
-var config.rulePump_On = {};
-var config.rulePump_Off = {};
+config.ruleLightOne_On = {}
+config.ruleLightOne_Off = {}
+config.ruleLightTwo_On = {}
+config.ruleLightTwo_Off = {}
+config.rulePump_On = {};
+config.rulePump_Off = {};
 
 config.ruleLightOne_On.minute = 00;
 config.ruleLightOne_On.hour = 10;
