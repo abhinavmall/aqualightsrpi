@@ -96,8 +96,8 @@ schedule.scheduleJob(rulePump_On, function(){
 });
 
 //Pump turned off at 2200 hrs every day
-rulePump_Off.minute = config.rulePump_On.minute;
-rulePump_Off.hour = config.rulePump_On.hour;
+rulePump_Off.minute = config.rulePump_Off.minute;
+rulePump_Off.hour = config.rulePump_Off.hour;
 schedule.scheduleJob(rulePump_Off, function(){
   console.log('Aquarium Pump - ' + new Date() + ' Filter pump turned off');
   pump.writeSync(OFF);
