@@ -40,34 +40,6 @@ pumpOff.setHours(config.rulePump_Off.hour, config.rulePump_Off.minute, 0);
 light1.init(lightOneOn, lightOneOff);
 light2.init(lightTwoOn, lightTwoOff);
 pump.init(pumpOn, pumpOff);
-/*
-if(date >= lightOneOn && date <= lightOneOff){
-  //Activate light 1
-  light1.writeSync(ON);
-  console.log('Aquarium Lights - ' + date + ' Light One turned on');
-} else {
-  light1.writeSync(OFF);
-  console.log('Aquarium Lights - ' + date + ' Light One turned off');
-}
-
-if(date >= lightTwoOn && date <= lightTwoOff){
-  //Activate light 2
-  light2.writeSync(ON);
-  console.log('Aquarium Lights - ' + date + ' Light Two turned on');
-} else {
-  light2.writeSync(OFF);
-  console.log('Aquarium Lights - ' + date + ' Light Two turned off');
-}
-
-if(date >= pumpOn && date <= pumpOff){
-  //Activate light 2
-  pump.writeSync(ON);
-  console.log('Aquarium Pump - ' + date + ' Filter pump turned on');
-} else {
-  pump.writeSync(OFF);
-  console.log('Aquarium Pump - ' + date + ' Filter pump turned off');
-}
-*/
 
 console.log('Aquarium lights - Pins activated. Scheduling Jobs');
 
