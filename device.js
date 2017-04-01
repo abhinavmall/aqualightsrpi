@@ -1,5 +1,3 @@
-//var schedule = require('node-schedule');
-
 var ON = 0, OFF = 1;
 
 function Device(name, gpio, onTime, offTime) {
@@ -7,8 +5,6 @@ function Device(name, gpio, onTime, offTime) {
   this.gpio = gpio;
   this.onTime = onTime;
   this.offTime = offTime;
-  //this.ruleDeviceOn = new schedule.RecurrenceRule();
-  //this.ruleDeviceOff = new schedule.RecurrenceRule();
 }
 
 //Initialize device as per on and off timing
