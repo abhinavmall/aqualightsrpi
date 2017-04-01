@@ -1,3 +1,5 @@
+var schedule = require('node-schedule');
+
 module.exports.createDeviceOnOffJobs = function(device, ruleDeviceOn, ruleDeviceOff){
   //Schedule device on job
   ruleDeviceOn.minute = device.onTime.minute;
