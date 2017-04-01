@@ -42,6 +42,10 @@ light1.init();
 light2.init();
 pump.init();
 
+light1.createDeviceOnOffJobs();
+light2.createDeviceOnOffJobs();
+pump.createDeviceOnOffJobs();
+
 //console.log('Aquarium lights - Pins activated. Scheduling Jobs');
 /*
 //Light One on at 1000 hrs every day

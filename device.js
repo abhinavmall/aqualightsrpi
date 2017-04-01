@@ -9,7 +9,6 @@ function Device(name, gpio, onTime, offTime) {
   this.offTime = offTime;
   this.ruleDeviceOn = new schedule.RecurrenceRule();
   this.ruleDeviceOff = new schedule.RecurrenceRule();
-  this.createDeviceOnOffJobs();
 }
 
 //Initialize device as per on and off timing
