@@ -7,8 +7,8 @@ function Device(name, gpio, onTime, offTime) {
   this.gpio = gpio;
   this.onTime = onTime;
   this.offTime = offTime;
-  this.ruleDeviceOn = new schedule.RecurrenceRule();
-  this.ruleDeviceOff = new schedule.RecurrenceRule();
+  //this.ruleDeviceOn = new schedule.RecurrenceRule();
+  //this.ruleDeviceOff = new schedule.RecurrenceRule();
 }
 
 //Initialize device as per on and off timing
@@ -38,7 +38,7 @@ Device.prototype.createDeviceOnOffJobs = function(){
   //Schedule device on job
   this.ruleDeviceOn.minute = this.onTime.minute;
   this.ruleDeviceOn.hour = this.onTime.hour;
-  schedule.scheduleJob(this.ruleDeviceOn, function(){
+  schedule.scheduleJob(this.ruleDeviceOn, function(this){
     console.log('Aquarium Lights - ' + new Date() + ' ' + this.name + ' turned on');
     this.gpio.writeSync(ON);
   });
@@ -46,7 +46,7 @@ Device.prototype.createDeviceOnOffJobs = function(){
   //Schedule device off job
   this.ruleDeviceOff.minute = this.offTime.minute;
   this.ruleDeviceOff.hour = this.offTime.hour;
-  schedule.scheduleJob(this.ruleDeviceOff, function(){
+  schedule.scheduleJob(this.ruleDeviceOff, function(this){
     console.log('Aquarium Lights - ' + new Date() + ' ' + this.name + ' turned off');
     this.gpio.writeSync(OFF);
   });
