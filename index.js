@@ -17,12 +17,12 @@ var ON = 0;
 var OFF = 1;
 
 //Create two lights corresponding to GPIO 2 & 3
-var light1 = new Device('Light One', new GPIO(2, 'out'));
-var light2 = new Device('Light Two', new GPIO(3, 'out'));
+var light1 = new Device('Light One', new GPIO(2, 'out'), config.ruleLightOne_On, config.ruleLightOne_Off);
+var light2 = new Device('Light Two', new GPIO(3, 'out'), config.ruleLightTwo_On, config.ruleLightTwo_Off);
 
 //Create pump corresponding to GPIO 4
-var pump = new Device('Pump', new GPIO(4, 'out'));
-
+var pump = new Device('Pump', new GPIO(4, 'out'), config.rulePump_On, config.rulePump_Off);
+/*
 //Schedule of lights and pump
 var lightOneOn = new Date();
 lightOneOn.setHours(config.ruleLightOne_On.hour, config.ruleLightOne_On.minute, 0);
@@ -36,10 +36,10 @@ var pumpOn = new Date();
 pumpOn.setHours(config.rulePump_On.hour, config.rulePump_On.minute, 0);
 var pumpOff = new Date();
 pumpOff.setHours(config.rulePump_Off.hour, config.rulePump_Off.minute, 0);
-
-light1.init(lightOneOn, lightOneOff);
-light2.init(lightTwoOn, lightTwoOff);
-pump.init(pumpOn, pumpOff);
+*/
+light1.init();
+light2.init();
+pump.init();
 
 console.log('Aquarium lights - Pins activated. Scheduling Jobs');
 
