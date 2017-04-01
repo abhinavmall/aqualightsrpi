@@ -42,7 +42,7 @@ light1.init();
 light2.init();
 pump.init();
 
-console.log('Aquarium lights - Pins activated. Scheduling Jobs');
+//console.log('Aquarium lights - Pins activated. Scheduling Jobs');
 /*
 //Light One on at 1000 hrs every day
 ruleLightOne_On.minute = config.ruleLightOne_On.minute;
