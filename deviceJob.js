@@ -1,18 +1,19 @@
 var schedule = require('node-schedule');
+var ON = 0, OFF = 1;
 
-module.exports.createDeviceOnOffJobs = function(device, ruleDeviceOn, ruleDeviceOff){
+module.exports.createDeviceOnOffJobs = function(device){
   //Schedule device on job
-  ruleDeviceOn.minute = device.onTime.minute;
-  ruleDeviceOn.hour = device.onTime.hour;
-  schedule.scheduleJob(ruleDeviceOn, function(){
+  device.ruleDeviceOn.minute = device.onTime.minute;
+  device.ruleDeviceOn.hour = device.onTime.hour;
+  schedule.scheduleJob(device.ruleDeviceOn, function(){
     console.log('Aquarium Lights - ' + new Date() + ' ' + device.name + ' turned on');
     device.gpio.writeSync(ON);
   });
 
   //Schedule device off job
-  ruleDeviceOff.minute = device.offTime.minute;
-  ruleDeviceOff.hour = device.offTime.hour;
-  schedule.scheduleJob(ruleDeviceOff, function(){
+  device.ruleDeviceOff.minute = device.offTime.minute;
+  device.ruleDeviceOff.hour = device.offTime.hour;
+  schedule.scheduleJob(device.ruleDeviceOff, function(){
     console.log('Aquarium Lights - ' + new Date() + ' ' + device.name + ' turned off');
     device.gpio.writeSync(OFF);
   });
