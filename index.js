@@ -41,9 +41,30 @@ pumpOff.setHours(config.rulePump_Off.hour, config.rulePump_Off.minute, 0);
 light1.init();
 light2.init();
 pump.init();
-createDeviceOnOffJobs(light1, ruleLightOne_On, ruleLightOne_Off);
-createDeviceOnOffJobs(light2, ruleLightTwo_On, ruleLightTwo_Off);
-createDeviceOnOffJobs(pump, rulePump_On, rulePump_Off);
+
+this.createDeviceOnOffJobs = function(device, ruleDeviceOn, ruleDeviceOff){
+  //Schedule device on job
+  ruleDeviceOn.minute = device.onTime.minute;
+  ruleDeviceOn.hour = device.onTime.hour;
+  schedule.scheduleJob(ruleDeviceOn, function(){
+    console.log('Aquarium Lights - ' + new Date() + ' ' + device.name + ' turned on');
+    device.gpio.writeSync(ON);
+  });
+
+  //Schedule device on job
+  ruleDeviceOff.minute = device.offTime.minute;
+  ruleDeviceOff.hour = device.offTime.hour;
+  schedule.scheduleJob(ruleDeviceOff, function(){
+    console.log('Aquarium Lights - ' + new Date() + ' ' + device.name + ' turned off');
+    device.gpio.writeSync(OFF);
+  });
+
+  console.log('Aquarium Lights - Jobs for ' + device.name + ' scheduled');
+};
+
+this.createDeviceOnOffJobs(light1, ruleLightOne_On, ruleLightOne_Off);
+this.createDeviceOnOffJobs(light2, ruleLightTwo_On, ruleLightTwo_Off);
+this.createDeviceOnOffJobs(pump, rulePump_On, rulePump_Off);
 
 //console.log('Aquarium lights - Pins activated. Scheduling Jobs');
 /*
@@ -101,22 +122,3 @@ console.log('Aquarium Lights - Jobs Scheduled');
   //light1.unexport();
   //light2.unexport();
 //});
-this.createDeviceOnOffJobs = function(device, ruleDeviceOn, ruleDeviceOff){
-  //Schedule device on job
-  ruleDeviceOn.minute = device.onTime.minute;
-  ruleDeviceOn.hour = device.onTime.hour;
-  schedule.scheduleJob(ruleDeviceOn, function(){
-    console.log('Aquarium Lights - ' + new Date() + ' ' + device.name + ' turned on');
-    device.gpio.writeSync(ON);
-  });
-
-  //Schedule device on job
-  ruleDeviceOff.minute = device.offTime.minute;
-  ruleDeviceOff.hour = device.offTime.hour;
-  schedule.scheduleJob(ruleDeviceOff, function(){
-    console.log('Aquarium Lights - ' + new Date() + ' ' + device.name + ' turned off');
-    device.gpio.writeSync(OFF);
-  });
-
-  console.log('Aquarium Lights - Jobs for ' + this.name + ' scheduled');
-};
