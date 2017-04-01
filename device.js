@@ -33,26 +33,4 @@ Device.prototype.init = function(){
   }
 };
 
-//Create device on and off recurrence rule
-/*
-Device.prototype.createDeviceOnOffJobs = function(){
-  //Schedule device on job
-  this.ruleDeviceOn.minute = this.onTime.minute;
-  this.ruleDeviceOn.hour = this.onTime.hour;
-  schedule.scheduleJob(this.ruleDeviceOn, function(this){
-    console.log('Aquarium Lights - ' + new Date() + ' ' + this.name + ' turned on');
-    this.gpio.writeSync(ON);
-  });
-
-  //Schedule device off job
-  this.ruleDeviceOff.minute = this.offTime.minute;
-  this.ruleDeviceOff.hour = this.offTime.hour;
-  schedule.scheduleJob(this.ruleDeviceOff, function(this){
-    console.log('Aquarium Lights - ' + new Date() + ' ' + this.name + ' turned off');
-    this.gpio.writeSync(OFF);
-  });
-
-  console.log('Aquarium Lights - Jobs for ' + this.name + ' scheduled');
-};
-*/
 module.exports = Device;
