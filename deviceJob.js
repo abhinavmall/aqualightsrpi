@@ -1,4 +1,5 @@
 var schedule = require('node-schedule');
+var ON = 0, OFF = 1;
 
 module.exports.createDeviceOnOffJobs = function(device){
   //Schedule device on job
