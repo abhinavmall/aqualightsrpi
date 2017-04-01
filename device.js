@@ -1,4 +1,4 @@
-var schedule = require('node-schedule');
+//var schedule = require('node-schedule');
 
 var ON = 0, OFF = 1;
 
@@ -34,6 +34,7 @@ Device.prototype.init = function(){
 };
 
 //Create device on and off recurrence rule
+/*
 Device.prototype.createDeviceOnOffJobs = function(){
   //Schedule device on job
   this.ruleDeviceOn.minute = this.onTime.minute;
@@ -53,5 +54,5 @@ Device.prototype.createDeviceOnOffJobs = function(){
 
   console.log('Aquarium Lights - Jobs for ' + this.name + ' scheduled');
 };
-
+*/
 module.exports = Device;
