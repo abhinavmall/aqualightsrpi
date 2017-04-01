@@ -1,7 +1,7 @@
 var schedule = require('node-schedule');
 var GPIO = require('onoff').Gpio;
-var config = require('./config/config.js')
-//console.log(config)
+var config = require('./config/config.js');
+var Device = require('./device.js');
 
 //Need four jobs to control on-off operations of two Lights.
 var ruleLightOne_On = new schedule.RecurrenceRule();
@@ -17,14 +17,11 @@ var ON = 0;
 var OFF = 1;
 
 //Create two lights corresponding to GPIO 2 & 3
-var light1 = new GPIO(2, 'out');
-var light2 = new GPIO(3, 'out');
+var light1 = new Device('Light One', new GPIO(2, 'out'));
+var light2 = new Device('Light Two', new GPIO(3, 'out'));
 
 //Create pump corresponding to GPIO 4
-var pump = new GPIO(4, 'out');
-
-//Current date and time
-var date = new Date();
+var pump = new Device('Pump', new GPIO(4, 'out'));
 
 //Schedule of lights and pump
 var lightOneOn = new Date();
@@ -40,32 +37,9 @@ pumpOn.setHours(config.rulePump_On.hour, config.rulePump_On.minute, 0);
 var pumpOff = new Date();
 pumpOff.setHours(config.rulePump_Off.hour, config.rulePump_Off.minute, 0);
 
-if(date >= lightOneOn && date <= lightOneOff){
-  //Activate light 1
-  light1.writeSync(ON);
-  console.log('Aquarium Lights - ' + date + ' Light One turned on');
-} else {
-  light1.writeSync(OFF);
-  console.log('Aquarium Lights - ' + date + ' Light One turned off');
-}
-
-if(date >= lightTwoOn && date <= lightTwoOff){
-  //Activate light 2
-  light2.writeSync(ON);
-  console.log('Aquarium Lights - ' + date + ' Light Two turned on');
-} else {
-  light2.writeSync(OFF);
-  console.log('Aquarium Lights - ' + date + ' Light Two turned off');
-}
-
-if(date >= pumpOn && date <= pumpOff){
-  //Activate light 2
-  pump.writeSync(ON);
-  console.log('Aquarium Pump - ' + date + ' Filter pump turned on');
-} else {
-  pump.writeSync(OFF);
-  console.log('Aquarium Pump - ' + date + ' Filter pump turned off');
-}
+light1.init(lightOneOn, lightOneOff);
+light2.init(lightTwoOn, lightTwoOff);
+pump.init(pumpOn, pumpOff);
 
 console.log('Aquarium lights - Pins activated. Scheduling Jobs');
 
