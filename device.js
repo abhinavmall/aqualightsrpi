@@ -1,3 +1,6 @@
+var ON = 0;
+var OFF = 1;
+
 function Device(name, gpio) {
   this.name = name;
   this.gpio = gpio;
