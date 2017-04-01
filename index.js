@@ -41,6 +41,9 @@ pumpOff.setHours(config.rulePump_Off.hour, config.rulePump_Off.minute, 0);
 light1.init();
 light2.init();
 pump.init();
+createDeviceOnOffJobs(light1, ruleLightOne_On, ruleLightOne_Off);
+createDeviceOnOffJobs(light2, ruleLightTwo_On, ruleLightTwo_Off);
+createDeviceOnOffJobs(pump, rulePump_On, rulePump_Off);
 
 //console.log('Aquarium lights - Pins activated. Scheduling Jobs');
 /*
