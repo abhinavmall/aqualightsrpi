@@ -8,21 +8,21 @@ config.rulePump_On = {};
 config.rulePump_Off = {};
 
 config.ruleLightOne_On.minute = 00;
-config.ruleLightOne_On.hour = 10;
+config.ruleLightOne_On.hour = 08;
 
 config.ruleLightOne_Off.minute = 00;
 config.ruleLightOne_Off.hour = 20;
 
 config.ruleLightTwo_On.minute = 00;
-config.ruleLightTwo_On.hour = 12;
+config.ruleLightTwo_On.hour = 10;
 
 config.ruleLightTwo_Off.minute = 00;
 config.ruleLightTwo_Off.hour = 22;
 
-config.rulePump_On.minute = 01;
-config.rulePump_On.hour = 00;
+config.rulePump_On.minute = 00;
+config.rulePump_On.hour = 08;
 
-config.rulePump_Off.minute = 59;
-config.rulePump_Off.hour = 23;
+config.rulePump_Off.minute = 00;
+config.rulePump_Off.hour = 22;
 
 module.exports = config;
