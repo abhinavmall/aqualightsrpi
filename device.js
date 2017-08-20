@@ -1,5 +1,7 @@
 var schedule = require('node-schedule');
 var ON = 0, OFF = 1;
+const mqtt = require('mqtt');
+const client = mqtt.connect('mqtt://192.168.1.53:1883');
 
 function Device(name, gpio, onTime, offTime) {
   this.name = name;
@@ -25,10 +27,14 @@ Device.prototype.init = function(){
   if(date >= switchOnTime && date <= switchOffTime){
     //Activate
     this.gpio.writeSync(ON);
-    console.log('Aquarium Lights - ' + date + ' ' + this.name + ' turned on');
+    var msg = 'Aquarium Lights - ' + date + ' ' + this.name + ' turned on';
+    console.log(msg);
+    client.publish('aquarium/set', msg);
   } else {
     this.gpio.writeSync(OFF);
-    console.log('Aquarium Lights - ' + date + ' ' + this.name + ' turned off');
+    var msg = 'Aquarium Lights - ' + date + ' ' + this.name + ' turned off';
+    console.log(msg);
+    client.publish('aquarium/set', msg);
   }
 };
 
