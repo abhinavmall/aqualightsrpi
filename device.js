@@ -1,7 +1,8 @@
-var schedule = require('node-schedule');
-var ON = 0, OFF = 1;
-const mqtt = require('mqtt');
-const client = mqtt.connect('mqtt://192.168.1.53:1883');
+const schedule = require('node-schedule');
+const ON = 0, OFF = 1;
+//const mqttClient = require('./helper/MqttClient');
+//const mqtt = require('mqtt');
+//const client = mqtt.connect('mqtt://192.168.1.53:1883');
 
 function Device(name, gpio, onTime, offTime) {
   this.name = name;
@@ -29,12 +30,12 @@ Device.prototype.init = function(){
     this.gpio.writeSync(ON);
     var msg = 'Aquarium Lights - ' + date + ' ' + this.name + ' turned on';
     console.log(msg);
-    client.publish('aquarium/set', msg);
+    //mqttClient.publishAllDeviceState();
   } else {
     this.gpio.writeSync(OFF);
     var msg = 'Aquarium Lights - ' + date + ' ' + this.name + ' turned off';
     console.log(msg);
-    client.publish('aquarium/set', msg);
+    //mqttClient.publishAllDeviceState();
   }
 };
 

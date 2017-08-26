@@ -1,7 +1,6 @@
 var schedule = require('node-schedule');
 const ON = 0, OFF = 1;
-const mqtt = require('mqtt');
-const client = mqtt.connect('192.168.1.53:1883');
+const mqttClient = require('./helper/MqttClient');
 
 module.exports.createDeviceOnOffJobs = function(device){
   //Schedule device on job
@@ -11,7 +10,7 @@ module.exports.createDeviceOnOffJobs = function(device){
     var msg = 'Aquarium Lights - ' + new Date() + ' ' + device.name + ' turned on';
     console.log(msg);
     device.gpio.writeSync(ON);
-    client.publish('aquarium/set', msg)
+    mqttClient.publishAllDeviceState();
   });
 
   //Schedule device off job
@@ -21,7 +20,7 @@ module.exports.createDeviceOnOffJobs = function(device){
     var msg = 'Aquarium Lights - ' + new Date() + ' ' + device.name + ' turned off';
     console.log(msg);
     device.gpio.writeSync(OFF);
-    client.publish('aquarium/set', msg);
+    mqttClient.publishAllDeviceState();
   });
 
   console.log('Aquarium Lights - Jobs for ' + device.name + ' scheduled');
