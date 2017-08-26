@@ -9,5 +9,6 @@ exports.publishAllDeviceState = function() {
     'Light Two' : aquarium['Light Two'].gpio.readSync(),
     'Pump' : aquarium['Pump'].gpio.readSync()
   };
+  // Publish JSON containing states for all devices. State: ON = 0 and OFF = 1
   client.publish('aquarium/set', JSON.stringify(msgJson));
 };

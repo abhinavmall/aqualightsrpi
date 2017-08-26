@@ -1,8 +1,6 @@
-//var schedule = require('node-schedule');
 const GPIO = require('onoff').Gpio;
 const config = require('../config/config.js');
 const Device = require('../device.js');
-//const DeviceJob = require('../deviceJob.js');
 
 //Create two lights corresponding to GPIO 2 & 3
 const light1 = new Device('Light One', new GPIO(2, 'out'), config.ruleLightOne_On, config.ruleLightOne_Off);
