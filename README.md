@@ -19,7 +19,7 @@ Using a local Mosquitto broker running on RPi.
 {
   "Light One":0,
   "Light Two":0,
-  Pump":0
+  "Pump":0
 }
 ```
 
