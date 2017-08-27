@@ -8,14 +8,14 @@
   },
   "author": "Abhinav Mall",
   "license": "ISC",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/abhinavmall/aqualightsrpi.git"
-    },
-    "bugs": {
-        "url": "https://github.com/abhinavmall/aqualightsrpi/issues"
-    },
-    "homepage": "https://github.com/abhinavmall/aqualightsrpi#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhinavmall/aqualightsrpi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abhinavmall/aqualightsrpi/issues"
+  },
+  "homepage": "https://github.com/abhinavmall/aqualightsrpi#readme",
 
   "dependencies": {
     "forever": "^0.15.3",
