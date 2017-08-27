@@ -7,7 +7,6 @@ const char* ssid     = CONFIG_WIFI_SSID;
 const char* password = CONFIG_WIFI_PASS;
 byte mac[6];
 const char* mqtt_server = CONFIG_MQTT_HOST;
-//IPAddress mqtt_server(192,168,1,53);
 
 WiFiClient wifiClient;
 PubSubClient client(wifiClient);
@@ -17,6 +16,8 @@ const char* aquarium_state = CONFIG_MQTT_TOPIC_STATE;
 const char* aquarium_set = CONFIG_MQTT_TOPIC_SET;
 
 const char* client_id = CONFIG_MQTT_CLIENT_ID;
+
+const char* esp_init_msg = "ESP8266_INIT";
 
 //Pins
 int light1_pin = CONFIG_PIN_LIGHT1;
@@ -105,6 +106,7 @@ void reconnect() {
     if (client.connect(client_id)) {
       Serial.println("connected");
       client.subscribe(aquarium_set);
+      client.publish(aquarium_state, esp_init_msg);
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
