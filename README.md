@@ -16,7 +16,11 @@ Using a local Mosquitto broker running on RPi.
 * [x] Publish device state message to topic for ESP8266 at events - initialize & state change. Sample -
 
 ```js
-{"Light One":0,"Light Two":0,"Pump":0}
+{
+  "Light One":0,
+  "Light Two":0,
+  Pump":0
+}
 ```
 
 
