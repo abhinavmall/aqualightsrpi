@@ -16,7 +16,6 @@
     "url": "https://github.com/abhinavmall/aqualightsrpi/issues"
   },
   "homepage": "https://github.com/abhinavmall/aqualightsrpi#readme",
-
   "dependencies": {
     "forever": "^0.15.3",
     "mqtt": "^2.12.0",

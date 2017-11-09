@@ -7,11 +7,15 @@ const mqttClient = require('./helper/MqttClient');
 aquarium['Light Two'].init();
 aquarium['Light One'].init();
 aquarium['Pump'].init();
+aquarium['Wave Maker'].init();
+aquarium['Power Light'].init();
 
 //Create Jobs
 deviceJob.createDeviceOnOffJobs(aquarium['Light Two']);
 deviceJob.createDeviceOnOffJobs(aquarium['Light One']);
 deviceJob.createDeviceOnOffJobs(aquarium['Pump']);
+deviceJob.createDeviceOnOffJobs(aquarium['Wave Maker']);
+deviceJob.createDeviceOnOffJobs(aquarium['Power Light']);
 
 //First init message
 mqttClient.publishAllDeviceState();
