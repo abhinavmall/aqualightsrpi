@@ -22,15 +22,31 @@ Device.prototype.init = function(){
   var switchOffTime = new Date();
   switchOffTime.setHours(this.offTime.hour, this.offTime.minute, 0);
 
-  if(date >= switchOnTime && date <= switchOffTime){
-    //Activate
-    this.gpio.writeSync(ON);
-    console.log('Aquarium Lights - ' + date + ' ' + this.name + ' turned on');
-  } else {
-    //Turn Off
-    this.gpio.writeSync(OFF);
-    console.log('Aquarium Lights - ' + date + ' ' + this.name + ' turned off');
+  //Case when switch on time is less than switch off time
+  if(switchOnTime < switchOffTime){
+    if(date >= switchOnTime && date <= switchOffTime){
+      //Activate
+      this.gpio.writeSync(ON);
+      console.log('Aquarium Lights - ' + date + ' ' + this.name + ' turned on');
+    } else {
+      //Turn Off
+      this.gpio.writeSync(OFF);
+      console.log('Aquarium Lights - ' + date + ' ' + this.name + ' turned off');
+    }
   }
+  //Switch off time is less than switch on time
+  else {
+    if(date >= switchOffTime && date <= switchOnTime){
+      //Deactivate
+      this.gpio.writeSync(OFF);
+      console.log('Aquarium Lights - ' + date + ' ' + this.name + ' turned off');
+    } else {
+      //Turn On
+      this.gpio.writeSync(ON);
+      console.log('Aquarium Lights - ' + date + ' ' + this.name + ' turned on');
+    }
+  }
+
 };
 
 module.exports = Device;

@@ -30,10 +30,10 @@ config.rulePump_Off.minute = 59;
 config.rulePump_Off.hour = 23;
 
 config.ruleWaveMaker_On.minute = 00;
-config.ruleWaveMaker_On.hour = 10;
+config.ruleWaveMaker_On.hour = 11;
 
 config.ruleWaveMaker_Off.minute = 00;
-config.ruleWaveMaker_Off.hour = 23;
+config.ruleWaveMaker_Off.hour = 07;
 
 config.rulePowerLight_On.minute = 00;
 config.rulePowerLight_On.hour = 11;
