@@ -20,7 +20,10 @@ var publishAllDeviceState = exports.publishAllDeviceState = function publishAllD
   var msgJson = {
     'Light One' : aquarium['Light One'].gpio.readSync(),
     'Light Two' : aquarium['Light Two'].gpio.readSync(),
-    'Pump' : aquarium['Pump'].gpio.readSync()
+    'Pump' : aquarium['Pump'].gpio.readSync(),
+    'Wave Maker' : aquarium['Wave Maker'].gpio.readSync(),
+    'Power Light' : aquarium['Power Light'].gpio.readSync(),
+    'CO2 Valve' : aquarium['CO2 Valve'].gpio.readSync()
   };
   // Publish JSON containing states for all devices. State: ON = 0 and OFF = 1
   client.publish('aquarium/set', JSON.stringify(msgJson));
