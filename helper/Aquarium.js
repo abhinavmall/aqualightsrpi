@@ -13,9 +13,9 @@ const pump = new Device('Pump', new GPIO(4, 'out'), config.rulePump_On, config.r
 const wavemaker = new Device('Wave Maker', new GPIO(27, 'out'), config.ruleWaveMaker_On, config.ruleWaveMaker_Off);
 
 //Create highpower light corresponding to 22
-const powerLight = new Device('Power Light', new GPIO(22, 'out'), config.ruleCO2Valve_On, config.ruleCO2Valve_Off);
+const powerLight = new Device('Power Light', new GPIO(22, 'out'), config.rulePowerLight_On, config.rulePowerLight_Off);
 
-//Create highpower light corresponding to 10
+//Create co2 valve corresponding to 10
 const co2Valve = new Device('CO2 Valve', new GPIO(10, 'out'), config.ruleCO2Valve_On, config.ruleCO2Valve_Off);
 
 const aquarium = { };
