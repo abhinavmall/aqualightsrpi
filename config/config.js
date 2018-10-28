@@ -41,7 +41,7 @@ config.rulePowerLight_On.minute = 00;
 config.rulePowerLight_On.hour = 10;
 
 config.rulePowerLight_Off.minute = 00;
-config.rulePowerLight_Off.hour = 17;
+config.rulePowerLight_Off.hour = 20;
 
 config.ruleCO2Valve_On.minute = 00;
 config.ruleCO2Valve_On.hour = 10;
