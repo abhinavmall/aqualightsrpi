@@ -17,13 +17,13 @@ config.ruleLightOne_On.minute = 00;
 config.ruleLightOne_On.hour = 07;
 
 config.ruleLightOne_Off.minute = 00;
-config.ruleLightOne_Off.hour = 21;
+config.ruleLightOne_Off.hour = 20;
 
 config.ruleLightTwo_On.minute = 00;
 config.ruleLightTwo_On.hour = 07;
 
 config.ruleLightTwo_Off.minute = 00;
-config.ruleLightTwo_Off.hour = 21;
+config.ruleLightTwo_Off.hour = 20;
 
 config.rulePump_On.minute = 01;
 config.rulePump_On.hour = 00;
