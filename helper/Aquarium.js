@@ -2,15 +2,15 @@ const GPIO = require('onoff').Gpio;
 const config = require('../config/config.js');
 const Device = require('../device.js');
 
-//Create two lights corresponding to GPIO 14 & 15
-const light1 = new Device('Light One', new GPIO(14, 'out'), config.ruleLightOne_On, config.ruleLightOne_Off);
-const light2 = new Device('Light Two', new GPIO(15, 'out'), config.ruleLightTwo_On, config.ruleLightTwo_Off);
+//Create two lights corresponding to GPIO 23 & 24
+const light1 = new Device('Light One', new GPIO(23, 'out'), config.ruleLightOne_On, config.ruleLightOne_Off);
+const light2 = new Device('Light Two', new GPIO(24, 'out'), config.ruleLightTwo_On, config.ruleLightTwo_Off);
 
-//Create pump corresponding to GPIO 18
-const pump = new Device('Pump', new GPIO(18, 'out'), config.rulePump_On, config.rulePump_Off);
+//Create pump corresponding to GPIO 25
+const pump = new Device('Pump', new GPIO(25, 'out'), config.rulePump_On, config.rulePump_Off);
 
-//Create wavemaker corresponding to 23
-const wavemaker = new Device('Wave Maker', new GPIO(23, 'out'), config.ruleWaveMaker_On, config.ruleWaveMaker_Off);
+//Create wavemaker corresponding to 8
+const wavemaker = new Device('Wave Maker', new GPIO(8, 'out'), config.ruleWaveMaker_On, config.ruleWaveMaker_Off);
 
 //Create highpower light corresponding to 22
 //const powerLight = new Device('Power Light', new GPIO(22, 'out'), config.rulePowerLight_On, config.rulePowerLight_Off);
