@@ -16,7 +16,7 @@ const wavemaker = new Device('Wave Maker', new GPIO(23, 'out'), config.ruleWaveM
 //const powerLight = new Device('Power Light', new GPIO(22, 'out'), config.rulePowerLight_On, config.rulePowerLight_Off);
 
 //Create co2 valve corresponding to 10
-c//onst co2Valve = new Device('CO2 Valve', new GPIO(10, 'out'), config.ruleCO2Valve_On, config.ruleCO2Valve_Off);
+//const co2Valve = new Device('CO2 Valve', new GPIO(10, 'out'), config.ruleCO2Valve_On, config.ruleCO2Valve_Off);
 
 const aquarium = { };
 aquarium[light1.name] = light1;
