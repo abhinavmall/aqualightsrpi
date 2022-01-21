@@ -17,13 +17,13 @@ config.ruleLightOne_On.minute = 00;
 config.ruleLightOne_On.hour = 08;
 
 config.ruleLightOne_Off.minute = 00;
-config.ruleLightOne_Off.hour = 18;
+config.ruleLightOne_Off.hour = 23;
 
 config.ruleLightTwo_On.minute = 00;
 config.ruleLightTwo_On.hour = 08;
 
 config.ruleLightTwo_Off.minute = 00;
-config.ruleLightTwo_Off.hour = 18;
+config.ruleLightTwo_Off.hour = 23;
 
 config.rulePump_On.minute = 01;
 config.rulePump_On.hour = 00;
@@ -35,18 +35,18 @@ config.ruleWaveMaker_On.minute = 00;
 config.ruleWaveMaker_On.hour = 11;
 
 config.ruleWaveMaker_Off.minute = 00;
-config.ruleWaveMaker_Off.hour = 07;
+config.ruleWaveMaker_Off.hour = 23;
 
 config.rulePowerLight_On.minute = 00;
 config.rulePowerLight_On.hour = 08;
 
 config.rulePowerLight_Off.minute = 00;
-config.rulePowerLight_Off.hour = 18;
+config.rulePowerLight_Off.hour = 23;
 
 config.ruleCO2Valve_On.minute = 00;
 config.ruleCO2Valve_On.hour = 10;
 
 config.ruleCO2Valve_Off.minute = 00;
-config.ruleCO2Valve_Off.hour = 20;
+config.ruleCO2Valve_Off.hour = 23;
 
 module.exports = config;
