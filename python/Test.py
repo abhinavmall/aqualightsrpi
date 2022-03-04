@@ -27,7 +27,7 @@ try:
   GPIO.output(23, GPIO.LOW)
   print "TWO"
   time.sleep(SleepTimeL);
- GPIO.cleanup()
+  GPIO.cleanup()
   print "Good bye!"
 
 # End program cleanly with keyboard
